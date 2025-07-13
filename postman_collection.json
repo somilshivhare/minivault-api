@@ -1,0 +1,87 @@
+{
+  "info": {
+    "name": "MiniVault API",
+    "description": "Collection for testing MiniVault API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["health"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "API Info",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": [""]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Generate Response",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"prompt\": \"What is the capital of France?\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/generate",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["generate"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Generate Response - Invalid Input",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"invalid_field\": \"This should fail\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/generate",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["generate"]
+        }
+      },
+      "response": []
+    }
+  ]
+} 
